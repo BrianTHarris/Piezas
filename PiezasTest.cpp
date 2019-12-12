@@ -33,7 +33,7 @@ TEST(PiezasTest, getpiece)
 	test.dropPiece(2);
 	test.dropPiece(2);
 	test.dropPiece(2);
-	cap = test.PieceAt(1,2);
+	cap = test.pieceAt(1,2);
 	ASSERT_TRUE(cap == O);
 }
 
