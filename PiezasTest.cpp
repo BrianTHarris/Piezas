@@ -55,7 +55,7 @@ TEST(PiezasTest, placepiecefull)
 	ASSERT_TRUE(cap == Blank);
 }
 
-TEST(PiezasTest, placepiece)
+TEST(PiezasTest, getpieceinvalid)
 {
 	Piezas test;
 	Piece cap;
