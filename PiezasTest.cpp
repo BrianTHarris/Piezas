@@ -18,3 +18,11 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+TEST(PiezasTest, placepiece)
+{
+	Piezas test;
+	Piece cap;
+	cap = test.dropPiece();
+	ASSERT_TRUE(cap == X);
+}
+
