@@ -41,6 +41,8 @@ TEST(PiezasTest, placepieceoutbounds)
 	Piezas test;
 	Piece cap;
 	cap = test.dropPiece(4);
+	test.dropPiece(5);
+	test.dropPiece(-1);
 	ASSERT_TRUE(cap == Invalid);
 	ASSERT_TRUE(test.dropPiece(0) == O);
 }
@@ -48,6 +50,7 @@ TEST(PiezasTest, placepiecefull)
 {
 	Piezas test;
 	Piece cap;
+	test.dropPiece(2);
 	test.dropPiece(2);
 	test.dropPiece(2);
 	test.dropPiece(2);
