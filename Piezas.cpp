@@ -71,7 +71,7 @@ Piece Piezas::dropPiece(int column)
 	}
 	for(int i= 0; i <3; ++i)
 	{
-		if(board[i][column] == blank)
+		if(board[i][column] == Blank)
 		{
 			Piece save = turn;
 			board[i][column] = turn;

@@ -22,7 +22,18 @@ TEST(PiezasTest, placepiece)
 {
 	Piezas test;
 	Piece cap;
-	cap = test.dropPiece();
+	cap = test.dropPiece(2);
 	ASSERT_TRUE(cap == X);
+}
+
+TEST(PiezasTest, getpiece)
+{
+	Piezas test;
+	Piece cap;
+	test.dropPiece(2);
+	test.dropPiece(2);
+	test.dropPiece(2);
+	cap = test.PieceAt(1,2);
+	ASSERT_TRUE(cap == O);
 }
 
