@@ -36,4 +36,42 @@ TEST(PiezasTest, getpiece)
 	cap = test.pieceAt(1,2);
 	ASSERT_TRUE(cap == O);
 }
+TEST(PiezasTest, placepieceoutbounds)
+{
+	Piezas test;
+	Piece cap;
+	cap = test.dropPiece(4);
+	ASSERT_TRUE(cap == Invalid);
+	ASSERT_TRUE(test.dropPiece(0) == O);
+}
+TEST(PiezasTest, placepiecefull)
+{
+	Piezas test;
+	Piece cap;
+	test.dropPiece(2);
+	test.dropPiece(2);
+	test.dropPiece(2);
+	cap = test.dropPiece(2);
+	ASSERT_TRUE(cap == Blank);
+}
+
+TEST(PiezasTest, placepiece)
+{
+	Piezas test;
+	Piece cap;
+	cap = test.pieceAt(3,2);
+	ASSERT_TRUE(cap == Invalid);
+}
+TEST(PiezasTest, resetboard)
+{
+	Piezas test;
+	Piece cap;
+	test.dropPiece(2);
+	test.dropPiece(2);
+	test.dropPiece(2);
+	test.reset();
+	cap = test.pieceAt(1,2);
+	ASSERT_TRUE(cap == Blank);
+}
+
 
