@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BrianTHarris/Piezas.svg?branch=master)](https://travis-ci.org/BrianTHarris/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/BrianTHarris/Piezas/badge.svg?branch=master)](https://coveralls.io/github/BrianTHarris/Piezas?branch=master)
 # Piezas
 
 ## Associated Enumerated Types
