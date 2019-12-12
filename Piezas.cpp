@@ -22,6 +22,18 @@
 **/
 Piezas::Piezas()
 {
+	Board.resize(BOARD_ROWS);
+	for (int i = 0 ; i < BOARD_ROWS; ++i)
+		Board[i].resize(BOARD_COLS);
+	turn = X;
+	
+	for(int i=0; i< BOARD_ROWS; i++)
+	{
+		for( int j =0; j < BOARD_COLS; j++)
+		{
+			Board[i][j] = Blank;
+		}
+	}
 }
 
 /**
@@ -30,6 +42,13 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+for(int i=0; i< BOARD_ROWS; i++)
+	{
+		for( int j =0; j < BOARD_COLS; j++)
+		{
+			Board[i][j] = Blank;
+		}
+	}
 }
 
 /**
