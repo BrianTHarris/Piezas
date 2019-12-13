@@ -100,6 +100,6 @@ TEST(PiezasTest, gamestatecountrows)
 	test.dropPiece(2);
 	test.dropPiece(2);//x
 	test.dropPiece(3);
-	ASSERT_TRUE(test.gameState() == X);
+	ASSERT_TRUE(test.pieceAt(0,0) == X);
 }
 
