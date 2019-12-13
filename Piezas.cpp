@@ -125,7 +125,7 @@ Piece Piezas::gameState()
 				return Invalid;
 		}
 	}
-	for (int i =0; i < BOARD_ROWS; i++)
+	for(int i =0; i < BOARD_ROWS; i++)
 	{
 		for(int j =0; j < BOARD_COLS; ++j)
 		{
@@ -141,6 +141,7 @@ Piece Piezas::gameState()
 						++o_score;
 				}
 
+				num=-1;
 			}
 
 			num=j;
@@ -154,6 +155,7 @@ Piece Piezas::gameState()
 						++o_score;
 				}
 
+				num+=1;
 			}
 
 			if(x_score > x_longest)
@@ -164,7 +166,7 @@ Piece Piezas::gameState()
 	}
 	if(x_longest == o_longest)
 		return Blank;
-	if(x_longest > o_longest)
+	else if(x_longest > o_longest)
 		return X;
 	else
 		return O;
