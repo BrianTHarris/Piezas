@@ -99,7 +99,7 @@ Piece Piezas::pieceAt(int row, int column)
 	if( row <0 || row >2 || column <0 || column >3)
 		return Invalid;
 	else
-	return board[row][column];
+		return board[row][column];
 }
 
 /**
@@ -113,5 +113,58 @@ Piece Piezas::pieceAt(int row, int column)
  **/
 Piece Piezas::gameState()
 {
+	int x_ longest = 0;
+	int o_longest=0;
+	int x_score=0;
+	int o_score=0;
+	for(int i=0; i< BOARD_ROWS; i++)
+	{
+		for( int j =0; j < BOARD_COLS; j++)
+		{
+			if(board[i][j] == Blank)
+				return Invalid;
+		}
+	}
+	for (int i =0; i < BOARD_ROWS; i++)
+	{
+		for(int j =0 j < BOARD_COLS; ++j)
+		{
+			
+				int num=j;
+				while(pieceAt(i,num-1) !=iNVALID)
+				{
+					if pieceAt(i,num-1) == pieceAt(i,j)
+					{
+						if(pieceAt(i,j) == X)
+						++x_score;
+						else
+							++o_score;
+					}
+
+				}
+
+ num=j;
+				while(pieceAt(i,num+1) !=iNVALID)
+				{
+					if pieceAt(i,num+1) == pieceAt(i,j)
+					{
+						if(pieceAt(i,j) == X)
+						++x_score;
+						else
+							++o_score;
+					}
+
+				}
+			
+				if(x_score > x_longest)
+					x_longest = x_score;
+				if(o_score > o_longest)
+					o_longest = o_score;
+		}
+	}
+if(x_longest == o_longest)
 	return Blank;
-}
+if(x_longest > o_longest)
+	return X;
+else
+	return O;

@@ -77,4 +77,29 @@ TEST(PiezasTest, resetboard)
 	ASSERT_TRUE(cap == Blank);
 }
 
+TEST(PiezasTest, gamestatenotdone)
+{
+	Piezas test;
+	test.dropPiece(0);
+	test.dropPiece(1);
+	ASSERT_TRUE(test.gameState() == Invalid);
+}
+
+TEST(PiezasTest, gamestatecountrows)
+{
+	Piezas test;
+	test.dropPiece(0);//x
+	test.dropPiece(0);//o
+	test.dropPiece(1);//x
+	test.dropPiece(0);
+	test.dropPiece(2);//x
+	test.dropPiece(1);
+	test.dropPiece(3);//x
+	test.dropPiece(1);
+	test.dropPiece(3);//x
+	test.dropPiece(2);
+	test.dropPiece(2);//x
+	test.dropPiece(3);
+	ASSERT_TRUE(test.gameState() == X);
+}
 
