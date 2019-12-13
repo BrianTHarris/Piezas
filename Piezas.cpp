@@ -131,7 +131,7 @@ Piece Piezas::gameState()
 		{
 
 			int num=j;
-			while(pieceAt(i,num-1) !=Invalid)
+			while(num-1 <0 )
 			{
 				if( pieceAt(i,num-1) == pieceAt(i,j))
 				{
@@ -144,7 +144,7 @@ Piece Piezas::gameState()
 			}
 
 			num=j;
-			while(pieceAt(i,num+1) !=Invalid)
+			while(num+1 <4 )
 			{
 				if (pieceAt(i,num+1) == pieceAt(i,j))
 				{
