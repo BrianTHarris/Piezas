@@ -131,7 +131,7 @@ Piece Piezas::gameState()
 		{
 
 			int num=j;
-			while(num-1 <0 )
+			while(num-1 >0 )
 			{
 				if( pieceAt(i,num-1) == pieceAt(i,j))
 				{
@@ -141,7 +141,7 @@ Piece Piezas::gameState()
 						++o_score;
 				}
 
-				num=-1;
+				num--;
 			}
 
 			num=j;
@@ -155,7 +155,7 @@ Piece Piezas::gameState()
 						++o_score;
 				}
 
-				num+=1;
+				num++;
 			}
 
 			if(x_score > x_longest)
