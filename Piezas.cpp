@@ -168,3 +168,4 @@ Piece Piezas::gameState()
 		return X;
 	else
 		return O;
+}
