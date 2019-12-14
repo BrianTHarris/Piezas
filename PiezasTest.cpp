@@ -103,3 +103,45 @@ TEST(PiezasTest, gamestatecountrows)
 	ASSERT_TRUE(test.gameState() == X);
 }
 
+
+
+
+
+
+TEST(PiezasTest, gamestatecountcols)
+{
+	Piezas test;
+	test.dropPiece(1);//x
+	test.dropPiece(0);//o
+	test.dropPiece(3);//x
+	test.dropPiece(0);
+	test.dropPiece(1);//x
+	test.dropPiece(2);
+	test.dropPiece(2);//x
+	test.dropPiece(0);
+	test.dropPiece(2);//x
+	test.dropPiece(3);
+	test.dropPiece(3);//x
+	test.dropPiece(1);
+	ASSERT_TRUE(test.gameState() == O);
+}
+
+TEST(PiezasTest, gamestatetie)
+{
+	Piezas test;
+	test.dropPiece(1);//x
+	test.dropPiece(0);//o
+	test.dropPiece(3);//x
+	test.dropPiece(0);
+	test.dropPiece(1);//x
+	test.dropPiece(2);
+	test.dropPiece(2);//x
+	test.dropPiece(0);
+	test.dropPiece(1);//x
+	test.dropPiece(3);
+	test.dropPiece(3);//x
+	test.dropPiece(2);
+	ASSERT_TRUE(test.gameState() == Blank);
+}
+
+

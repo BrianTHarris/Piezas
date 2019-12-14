@@ -164,6 +164,63 @@ Piece Piezas::gameState()
 				o_longest = o_score;
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+	for(int i =0; i < BOARD_ROWS; i++)
+	{
+		for(int j =0; j < BOARD_COLS; ++j)
+		{
+
+			int num=j;
+			while(num-1 >0 )
+			{
+				if( pieceAt(num-1,j) == pieceAt(i,j))
+				{
+					if(pieceAt(i,j) == X)
+						++x_score;
+					else
+						++o_score;
+				}
+
+				num--;
+			}
+
+			num=j;
+			while(num+1 <4 )
+			{
+				if (pieceAt(num+1,j) == pieceAt(i,j))
+				{
+					if(pieceAt(i,j) == X)
+						++x_score;
+					else
+						++o_score;
+				}
+
+				num++;
+			}
+
+			if(x_score > x_longest)
+				x_longest = x_score;
+			if(o_score > o_longest)
+				o_longest = o_score;
+		}
+	}
+
+
+
+
+
+
+
+
 	if(x_longest == o_longest)
 		return Blank;
 	else if(x_longest > o_longest)
