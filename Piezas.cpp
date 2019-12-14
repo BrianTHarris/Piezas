@@ -221,7 +221,7 @@ for(int i = 0; i<3; ++i)
 	{
 		if(board[i][j] == X)
 			x_longest =1;
-		if(board[i][j] == O)
+		else if(board[i][j] == O)
 			o_longest =1;
 
 	}
@@ -235,7 +235,7 @@ for(int i = 0; i<3; ++i)
 		{
 		if(board[i][j] == X)
 			x_longest =2;
-		if(board[i][j] == O)
+		else if(board[i][j] == O)
 			o_longest =2;
 	}
 
@@ -244,7 +244,7 @@ for(int i = 0; i<3; ++i)
 //for length3
 for(int j = 0; j <4; ++j)
 {
-	if(board[0][j] == board[1][j] == board[2][j])
+	if(board[0][j] == board[1][j]&& board[0][j] == board[2][j])
 	{
 		if (board[0][j] ==X) 
 			x_longest =3;
@@ -254,7 +254,7 @@ for(int j = 0; j <4; ++j)
 }
 for(int i = 0; i <3; ++i)
 {
-	if(board[i][0] == board[i][1] == board[i][2]|| board[i][1] == board[i][2]== board[i][3])
+	if((board[i][0] == board[i][1]&& board[i][0] == board[i][2]) ||( board[i][1] == board[i][2] && board[i][1]== board[i][3]))
 	{
 		if (board[i][0] ==X) 
 			x_longest =3;
@@ -265,7 +265,7 @@ for(int i = 0; i <3; ++i)
 //for length4 
 for(int i = 0; i <3; ++i)
 {
-	if(board[i][0] == board[i][1] == board[i][2] == board[i][3])
+	if(board[i][0] == board[i][1]&&board[i][0] == board[i][2]&&board[i][0] == board[i][3])
 	{
 		if (board[i][0] ==X) 
 			x_longest =4;
