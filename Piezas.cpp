@@ -125,103 +125,158 @@ Piece Piezas::gameState()
 				return Invalid;
 		}
 	}
-	for(int i =0; i < BOARD_ROWS; i++)
-	{
-		for(int j =0; j < BOARD_COLS; ++j)
-		{
+	/*
+	   for(int i =0; i < BOARD_ROWS; i++)
+	   {
+	   for(int j =0; j < BOARD_COLS; ++j)
+	   {
 
-			int num=j;
-			while(num-1 >0 )
-			{
-				if( pieceAt(i,num-1) == pieceAt(i,j))
-				{
-					if(pieceAt(i,j) == X)
-						++x_score;
-					else
-						++o_score;
-				}
+	   int num=j;
+	   while(num-1 >0 )
+	   {
+	   if( pieceAt(i,num-1) == pieceAt(i,j))
+	   {
+	   if(pieceAt(i,j) == X)
+	   ++x_score;
+	   else
+	   ++o_score;
+	   }
 
-				num--;
-			}
+	   num--;
+	   }
 
-			num=j;
-			while(num+1 <4 )
-			{
-				if (pieceAt(i,num+1) == pieceAt(i,j))
-				{
-					if(pieceAt(i,j) == X)
-						++x_score;
-					else
-						++o_score;
-				}
+	   num=j;
+	   while(num+1 <4 )
+	   {
+	   if (pieceAt(i,num+1) == pieceAt(i,j))
+	   {
+	   if(pieceAt(i,j) == X)
+	   ++x_score;
+	   else
+	   ++o_score;
+	   }
 
-				num++;
-			}
+	   num++;
+	   }
 
-			if(x_score > x_longest)
-				x_longest = x_score;
-			if(o_score > o_longest)
-				o_longest = o_score;
-			x_score = 0;
-			o_score=0;
-		}
-	}
-
-
-
-
-	for(int i =0; i < BOARD_ROWS; i++)
-	{
-		for(int j =0; j < BOARD_COLS; ++j)
-		{
-
-			int num=j;
-			while(num-1 >0 )
-			{
-				if( pieceAt(num-1,j) == pieceAt(i,j))
-				{
-					if(pieceAt(i,j) == X)
-						++x_score;
-					else
-						++o_score;
-				}
-
-				num--;
-			}
-
-			num=j;
-			while(num+1 <3 )
-			{
-				if (pieceAt(num+1,j) == pieceAt(i,j))
-				{
-					if(pieceAt(i,j) == X)
-						++x_score;
-					else
-						++o_score;
-				}
-
-				num++;
-			}
-
-			if(x_score > x_longest)
-				x_longest = x_score;
-			if(o_score > o_longest)
-				o_longest = o_score;
-			x_score=0;
-			o_score=0;
-		}
-	}
+	   if(x_score > x_longest)
+	   x_longest = x_score;
+	   if(o_score > o_longest)
+	   o_longest = o_score;
+	   x_score = 0;
+	   o_score=0;
+	   }
+	   }
 
 
 
 
+	   for(int i =0; i < BOARD_ROWS; i++)
+	   {
+	   for(int j =0; j < BOARD_COLS; ++j)
+	   {
 
+	   int num=i;
+	   while(num-1 >0 )
+	   {
+	   if( pieceAt(num-1,j) == pieceAt(i,j))
+	   {
+	   if(pieceAt(i,j) == X)
+	   ++x_score;
+	   else
+	   ++o_score;
+	   }
 
+	   num--;
+	   }
 
-	if(x_longest == o_longest)
-		return Blank;
-	else if(x_longest > o_longest)
-		return X;
-	else
-		return O;
+	   num=i;
+	   while(num+1 <3 )
+	   {
+	   if (pieceAt(num+1,j) == pieceAt(i,j))
+	   {
+	   if(pieceAt(i,j) == X)
+	++x_score;
+	   else
+		   ++o_score;
 }
+
+num++;
+}
+
+if(x_score > x_longest)
+	x_longest = x_score;
+if(o_score > o_longest)
+	o_longest = o_score;
+	x_score=0;
+	o_score=0;
+	}
+}
+
+*/
+//for length1
+for(int i = 0; i<3; ++i)
+{
+	for(int j =0; j < BOARD_COLS; ++j)
+	{
+		if(board[i][j] == X)
+			x_longest =1;
+		if(board[i][j] == O)
+			o_longest =1;
+
+	}
+}
+//for length2
+for(int i = 0; i<3; ++i)
+{
+	for(int j =0; j < BOARD_COLS; ++j)
+	{
+		if(board[i][j] == pieceAt(i,j+1)|| board[i][j] == pieceAt(i,j-1)|| board[i][j] == pieceAt(i+1,j)|| board[i][j] == pieceAt(i-1,j) )
+		{
+		if(board[i][j] == X)
+			x_longest =2;
+		if(board[i][j] == O)
+			o_longest =2;
+	}
+
+	}
+}
+//for length3
+for(int j = 0; j <4; ++j)
+{
+	if(board[0][j] == board[1][j] == board[2][j])
+	{
+		if (board[i][0] ==X) 
+			x_longest =3;
+		else 
+			o_longest =3;
+	}
+}
+for(int i = 0; i <3; ++i)
+{
+	if(board[i][0] == board[i][1] == board[i][2]|| board[i][1] == board[i][2]== board[i][3])
+	{
+		if (board[i][0] ==X) 
+			x_longest =3;
+		else 
+			o_longest =3;
+	}
+}
+//for length4 
+for(int i = 0; i <3; ++i)
+{
+	if(board[i][0] == board[i][1] == board[i][2] == board[i][3])
+	{
+		if (board[i][0] ==X) 
+			x_longest =4;
+		else 
+			o_longest =4;
+	}
+}
+if(x_longest == o_longest)
+	return Blank;
+else if(x_longest > o_longest)
+	return X;
+	else
+	return O;
+	}
