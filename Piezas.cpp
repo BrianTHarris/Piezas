@@ -162,6 +162,8 @@ Piece Piezas::gameState()
 				x_longest = x_score;
 			if(o_score > o_longest)
 				o_longest = o_score;
+			x_score = 0;
+			o_score=0;
 		}
 	}
 
@@ -211,6 +213,8 @@ Piece Piezas::gameState()
 				x_longest = x_score;
 			if(o_score > o_longest)
 				o_longest = o_score;
+			x_score=0;
+			o_score=0;
 		}
 	}
 
