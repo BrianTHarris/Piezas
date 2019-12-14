@@ -246,7 +246,7 @@ for(int j = 0; j <4; ++j)
 {
 	if(board[0][j] == board[1][j] == board[2][j])
 	{
-		if (board[i][0] ==X) 
+		if (board[0][j] ==X) 
 			x_longest =3;
 		else 
 			o_longest =3;
