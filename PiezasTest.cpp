@@ -100,7 +100,7 @@ TEST(PiezasTest, gamestatecountrows)
 	test.dropPiece(2);
 	test.dropPiece(2);//x
 	test.dropPiece(3);
-	ASSERT_TRUE(test.gameState() == X);
+	ASSERT_EQ(test.gameState(),  X);
 }
 
 
@@ -123,7 +123,7 @@ TEST(PiezasTest, gamestatecountcols)
 	test.dropPiece(3);
 	test.dropPiece(3);//x
 	test.dropPiece(1);
-	ASSERT_EQ(test.gameState(),  O);
+	ASSERT_EQ(test.gameState(), O);
 }
 
 TEST(PiezasTest, gamestatetie)
@@ -141,7 +141,7 @@ TEST(PiezasTest, gamestatetie)
 	test.dropPiece(3);
 	test.dropPiece(3);//x
 	test.dropPiece(2);
-	ASSERT_EQ(test.gameState(), Blank );
+	ASSERT_EQ(test.gameState(), Blank);
 }
 
 
